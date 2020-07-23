@@ -1,0 +1,13 @@
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\bin\Debug\netcoreapp3.1\Cognisess numerical memory.exe
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\bin\Debug\netcoreapp3.1\Cognisess numerical memory.deps.json
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\bin\Debug\netcoreapp3.1\Cognisess numerical memory.runtimeconfig.json
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\bin\Debug\netcoreapp3.1\Cognisess numerical memory.runtimeconfig.dev.json
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\bin\Debug\netcoreapp3.1\Cognisess numerical memory.dll
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\bin\Debug\netcoreapp3.1\Cognisess numerical memory.pdb
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\obj\Debug\netcoreapp3.1\Cognisess numerical memory.csprojAssemblyReference.cache
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\obj\Debug\netcoreapp3.1\Cognisess numerical memory.AssemblyInfoInputs.cache
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\obj\Debug\netcoreapp3.1\Cognisess numerical memory.AssemblyInfo.cs
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\obj\Debug\netcoreapp3.1\Cognisess numerical memory.csproj.CoreCompileInputs.cache
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\obj\Debug\netcoreapp3.1\Cognisess numerical memory.dll
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\obj\Debug\netcoreapp3.1\Cognisess numerical memory.pdb
+C:\Users\$ID\Desktop\cognisess software test\Cognisess numerical memory\Cognisess numerical memory\obj\Debug\netcoreapp3.1\Cognisess numerical memory.genruntimeconfig.cache

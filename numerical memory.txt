@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NUMERICAL MEMORY ASSESSMENT</title>
+    <meta charset="UTF-8">
+    <style>
+        .btn {
+            text-align: center;
+            -webkit-border-radius: 28;
+            -moz-border-radius: 28;
+            border-radius: 28px;
+            font-family: Arial;
+            font-size: 100px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+
+        .btn2 {
+            
+            text-align: left;
+            -webkit-border-radius: 28;
+            -moz-border-radius: 28;
+            border-radius: 28px;
+            font-family: Arial;
+            color: black;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+
+        .btn3 {
+            
+            text-align: center;
+            -webkit-border-radius: 28;
+            -moz-border-radius: 28;
+            border-radius: 28px;
+            font-family: Arial;
+            color: black;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+            .btn3:hover {
+                background: green;
+                text-decoration: none;
+            }
+
+            .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 80%;
+            height: 80%;
+            endflow: auto;
+            
+        }
+
+        .modal-content {
+            
+            margin: auto;
+            padding: 20px;
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body style="background-color:White;">
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h1>RESULTS</h1>
+            <h2>marks:</h2>
+            <p id="finalmarks" class="btn2"></p>
+            <h2> Correct entries: </h2>
+            <p id="finalAnswers" class="btn2"></p>
+            <h2>Time taken per question (in milliseconds):</h2>
+            <p id="respond" class="btn2"></p>
+        </div>
+    </div>
+    <div id="myModal2" class="modal">
+        <div class="modal-content">
+            <h1> NUMERICAL MEMORY TEST</h1>
+	    <h3>This is an assessment for testing Numerical memory.
+		This assessment will take 60 seconds where each number will appear for 3 seconds after which you will 
+		be asked to enter the number that was displayed on the screen. You have to enter your answer using keypad. 
+		10 points are awarded for every Correct entry entry answer whereas marks remains same if you enter a wrong answer.
+		Your marks will be shown throughout the test followed by a summary of your performance in the end</h3>
+      <div id="start" class="btn3"> Click here to start the Test</div>
+        </div>
+    </div>
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-topleft w3-padding-large w3-xlarge">
+            <p id="marks" class="btn2"></p>
+        </div>
+        <div class="w3-display-middle">
+            <h1 class="w3-jumbo w3-animate-top"><p id="number" class="btn"></p></h1>
+            <p class="w3-large w3-center"><p id="demo" class="btn2"></p></p>
+        </div>
+    </div>
+
+    <script>
+    var end = false;
+        var num;
+        var marks = 0;
+        var round = 0;
+        var numLength = 1;
+        var responsetime = [];
+        var time;
+        var displayNum = document.getElementById("number");
+        var message = document.getElementById("demo");
+        var results = document.getElementById("results");
+        var displaymarks = document.getElementById("marks");
+        var modal = document.getElementById("myModal");
+        var modal2 = document.getElementById("myModal2");
+        var startButton = document.getElementById('start');
+
+        modal2.style.display = "block";
+        startButton.addEventListener('click', begintest);
+
+        function begintest() {
+            modal2.style.display = "none";
+            displaymarks.innerHTML = "marks: " + marks;
+            setTimeout(function () { endtest() }, 60000);
+            showNum();
+        }
+
+        function endtest() {
+            end = true
+            document.getElementById("finalmarks").innerHTML = marks;
+            document.getElementById("finalAnswers").innerHTML = marks / 10;
+            document.getElementById("respond").innerHTML = responsetime;
+            modal.style.display = "block";
+        }
+
+        function showNum() {
+            generateRandomNum(numLength);
+            document.getElementById("number").innerHTML = num;
+            setTimeout(function () { document.getElementById("number").innerHTML = " " }, 2900);
+            setTimeout(function () { if (end == false) { getInput() } }, 3000);
+        }
+
+        function getInput() {
+            var d = new Date();
+            var startT = d.getTime();
+            var input = prompt("Enter the number you just saw:");
+            d = new Date();
+            var endT = d.getTime();
+            time = endT - startT
+
+            if (input != num) {
+                responsetime[round] = time;
+                round = round + 1;
+                document.getElementById("demo").innerHTML =
+                    "wrong entry ";
+                document.getElementById("marks").innerHTML = "marks: " + marks;
+                if (end == false) {
+                    showNum();
+                }
+            }
+            else {
+                marks = marks + 10;
+                numLength = numLength + 1;
+                responsetime[round] = time;
+                round = round + 1;
+                document.getElementById("demo").innerHTML =
+                    "Correct entry";
+                document.getElementById("marks").innerHTML = "marks: " + marks;
+                if (end == false) {
+                    showNum();
+                }
+
+            }
+        }
+
+        function generateRandomNum(length) {
+
+            num = Math.floor(Math.random() * Math.pow(10, length));
+
+            while (getlength(num) < length) {
+                num = (num * 10) + generateRandomNum(1);
+            }
+
+            return num
+        }
+
+        function getlength(number) {
+            return number.toString().length;
+        }</script>
+
+</body>
+</html>
+
